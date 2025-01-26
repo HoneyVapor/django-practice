@@ -14,5 +14,5 @@ def consulta_sql(request):
         cursor.execute("SELECT * FROM `users`")
         rows = cursor.fetchall()
         for row in rows:
-            response += row
-    return response
+            response += ' '.join(str(row))
+    return HttpResponse(response)
